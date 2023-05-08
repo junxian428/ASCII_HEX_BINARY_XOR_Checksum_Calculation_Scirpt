@@ -13,7 +13,13 @@ def Assign(input_data):
 
     for i in range(len(input_data)):
         my_array.append(input_data[i])
-        my_hex_array.append(bytes(input_data[i],"utf-8").hex())
+        if(i == 3 or i ==4):
+            print(input_data[i])
+            decimal_value = int(bytes(input_data[i],"utf-8").hex(), 16)
+            my_hex_array.append(str(decimal_value))
+            print(decimal_value)
+        else:
+            my_hex_array.append(bytes(input_data[i],"utf-8").hex())
     
     print(my_array)
     print(my_hex_array)
